@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\FrontHomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::prefix('front')->name('front.')->group(function () {
+    Route::get('/', FrontHomeController::class)->name('index');
+    Route::view('/login', 'Front.Auth.login')->name('login');
+    Route::view('/register', 'Front.Auth.register')->name('register');
+    Route::view('/forget-password', 'Front.Auth.forget-password')->name('forget-password');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
