@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 Route::prefix('front')->name('front.')->group(function () {
-    Route::get('/', FrontHomeController::class)->name('index');
+    Route::get('/', FrontHomeController::class)->name('index')->middleware(['auth']);
     Route::view('/login', 'Front.Auth.login')->name('login');
     Route::view('/register', 'Front.Auth.register')->name('register');
     Route::view('/forget-password', 'Front.Auth.forget-password')->name('forget-password');

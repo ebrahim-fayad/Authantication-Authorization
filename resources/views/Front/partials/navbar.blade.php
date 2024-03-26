@@ -79,10 +79,13 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="auth-login-basic.html">
-                            <i class="bx bx-power-off me-2"></i>
-                            <span class="align-middle">Log Out</span>
-                        </a>
+                        <form action="{{ route('logout') }}" method="post" id='my_form'>
+                            @csrf
+                            <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;">
+                                <i class="bx bx-power-off me-2"></i>
+                                <span class="align-middle">Log Out</span>
+                            </a>
+                        </form>
                     </li>
                 </ul>
             </li>
