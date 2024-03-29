@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('back')->name('back.')->group(function () {
-    Route::get('/', AdminHomeController::class)->name('index')->middleware('auth:admin');
+    Route::get('/', AdminHomeController::class)->name('index')->middleware('admin');
     // Route::view('/login', 'Back.Auth.login')->name('login');
     // Route::view('/register', 'Back.Auth.register')->name('register');
     // Route::view('/forget-password', 'Back.Auth.forget-password')->name('forget-password');
