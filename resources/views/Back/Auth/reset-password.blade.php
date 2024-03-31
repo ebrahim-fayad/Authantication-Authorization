@@ -1,6 +1,6 @@
-@extends('Front.Auth.partials.auth-master')
+@extends('Back.Auth.partials.auth-master')
 @section('title')
-    Forget-Password Page
+    Forget-Password Page || back
 @endsection
 
 @section('content')
